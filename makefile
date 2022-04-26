@@ -1,10 +1,10 @@
 all: README.md
 
 README.md: guessinggame.sh
-	echo "# Unix Workbench Project" > README.md
+	echo "# My Unix Workbench Project by Juan Carreón" > README.md
 
-	echo "My project's run date and time: " >> README.md
+	echo "My project's run date and time is: " >> README.md
 	date >> README.md
 
-	echo "The number of lines of code contained in guessinggame.sh: " >> README.md
+	echo "Total number of lines in guessinggame.sh: " >> README.md
 	wc -l guessinggame.sh | egrep -o "[0-9]+" >> README.md

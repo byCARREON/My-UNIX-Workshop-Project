@@ -1,28 +1,25 @@
-function guessfunction(){
-    files=$(ls | wc -l)
-    correct=1
+# Guessing Game Function
 
-    while [[ $correct -gt 0 ]];
-    do
-        echo "Enter your guess as a number"
-        read  guess
-
-	if [ $guess -lt $files ]
-        then
-            echo "Incorrect, a lower number was entered"
-
-	elif [ $guess -gt $files ]
-        then
-            echo "Incorrect, a greater number was entered"
-
-	 else
-            echo "Good! the correct number was entered"
-            let correct=$correct-1
-        fi
-    done
+function guessingLoop {
+  while [[ $response -ne $correct_number ]]
+  do 
+    if [[ $response -lt $correct_number ]]
+    then
+      echo "The number entered was lower than expected."
+      read response
+    elif [[ $response -gt correct_number ]]
+    then
+      echo "The number entered was higher than expected."
+      read response
+    fi
+  done
+  echo "Good! Your answer was indeed correct"
 }
 
-echo "How many files are in this current directory?"
-guessfunction
+echo "Welcome to the Guessing Game: enter your guess of how many files are in this current directory"
+read response
 
-echo "The program has completed all tasks and is shutting down"
+correct_number=$(ls | wc -l)
+guessloop response correct_number
+
+# End of guessing game
