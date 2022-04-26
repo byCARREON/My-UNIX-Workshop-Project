@@ -1,7 +1,7 @@
 all: README.md
 
 README.md: guessinggame.sh
-	echo "# My Unix Workbench Project by Juan Carreón" > README.md
+	echo "# My Unix Workbench Project by Juan Carreon" > README.md
 
 	echo "My project's run date and time is: " >> README.md
 	date >> README.md
